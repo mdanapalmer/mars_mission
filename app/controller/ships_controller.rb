@@ -1,0 +1,4 @@
+class ShipsController < ApplicationController
+
+end
+
