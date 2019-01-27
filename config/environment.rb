@@ -1,5 +1,7 @@
 require 'bundler'
 
+SINATRA_ACTIVESUPPORT_WARNING=false
+
 Bundler.require
 
 ActiveRecord::Base.establish_connection(

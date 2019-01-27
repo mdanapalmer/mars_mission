@@ -18,7 +18,6 @@ class AstronautsController < ApplicationController
 		else
 			"An edit astronaut form"
 		end
-
 	end	
 
 end
