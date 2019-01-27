@@ -5,8 +5,17 @@ get '/login' do
 end
 
 post '/sessions' do
-	session[:email] = params[:email]
-	redirect to '/posts'
+	if session[:email] != nil
+		redirect to '/posts'			
+	else
+		session[:email] = params[:email]
+		redirect to '/login'
+	end
+end
+
+get '/logout' do
+	logout
+	redirect to '/login'
 end
 
 end

@@ -6,4 +6,20 @@ class ApplicationController < Sinatra::Base
 		enable :sessions
 		set :session_secret, "carcollection"
 	end
+
+	helpers do 
+
+		def logged_in?
+			!!session[:email]
+		end
+
+		def login(email)
+			session[:email] = params[:email]
+		end
+
+		def logout
+			session.clear
+		end
+
+	end
 end
