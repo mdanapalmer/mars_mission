@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mission Control</title>
+    <link rel="stylesheet" href="stylesheets/bootstrap.css" type="text/css">  
+  </head>
+  <body id="page-top">
+    <h2>Welcome to Mission Control</h2>
+
+<% if logged_in? %>
+    <h3>Menu</h3>
+<ul>
+  <li><a href="/astronauts/new">Make a New Crew</a></li>
+  <li><a href="/astronauts">See All the Crew Members</a></li>
+  <li><a href="/spaceships">See All the Ships</a></li>
+  <li><a href="/missions">See All Ships and Crews</a></li>
+</ul>
+
+<h4>Settings</h4>
+<a href="/users/:id/edit">Edit User</a>
+<% end %>
+
+  <% if !logged_in? %>
+    <h3>Log In to Access Your Console</h3>
+    
+  <a href="/login">Log In</a> to Access Your Personal Console.
+  <br>
+  <br>
+  <a href="/signup">Sign up</a> to Create a Console.
+  <% end %>
+
+  </body>
+</html>

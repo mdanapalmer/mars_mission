@@ -4,28 +4,29 @@ class ApplicationController < Sinatra::Base
 		set :public_folder, 'public'
 		set :views, 'app/views'
 		enable :sessions
-		set :session_secret, "carcollection"
+		set :session_secret, "ad_astra"
+	end
+
+	get '/' do
+		erb :index
 	end
 
 	helpers do 
 
-		def logged_in?
-			!!session[:email]
-		end
-
-		def login(email, password)
-			user = User.find_by(:email => email) 
-			if user && user.authenticate(password)
-			session[:email] = params[:email]
-			else
-				redirect to '/login'
-		end
+	def logged_in?
+		!!session[:user_id]
 	end
-end
 
 	def logout!
 		session.clear
 	end
 
-end
+	def user_logged_in?
+		if !logged_in?
+			redirect to '/login'
+		end
+	end
 
+
+end
+end

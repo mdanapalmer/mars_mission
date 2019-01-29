@@ -1,0 +1,8 @@
+<%= Astronauts.each do |astro| %>
+  <ul>
+  	<li><%= astro.name %><br /></li>
+  </ul>
+
+
+  <a href="/astronauts/<%=astro.id%>/edit">Edit</a>
+<% end %>

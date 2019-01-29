@@ -10,11 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_27_083513) do
+ActiveRecord::Schema.define(version: 2019_01_28_035310) do
+
+  create_table "astronauts", force: :cascade do |t|
+    t.string "name"
+    t.integer "weight"
+    t.integer "height"
+    t.string "bio"
+    t.string "nationality"
+    t.string "specialty"
+  end
+
+  create_table "spaceships", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.string "speed"
+    t.string "crew"
+    t.string "cargo"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
+    t.string "name"
+    t.string "rank"
+    t.string "age"
   end
 
 end
