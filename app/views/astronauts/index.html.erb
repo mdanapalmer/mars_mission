@@ -1,8 +1,12 @@
-<%= Astronauts.each do |astro| %>
-  <ul>
-  	<li><%= astro.name %><br /></li>
-  </ul>
-
-
-  <a href="/astronauts/<%=astro.id%>/edit">Edit</a>
-<% end %>
+<ul><% @astronauts.each do |astro| %>
+<li><%= astro.name %></li>
+<li><%= astro.weight %></li>
+<li><%= astro.height %></li>
+<li><%= astro.bio %></li>
+<li><%= astro.specialty %></li>
+<li><%= astro.nationality %></li>
+</ul>
+<br>
+<a href="/astronauts/<%=astro.id%>/edit">Edit</a>
+  <br />
+  <br />

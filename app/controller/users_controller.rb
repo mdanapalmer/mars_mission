@@ -1,31 +1,21 @@
 class UsersController < ApplicationController
 
 	get '/signup' do 
-		erb :'user/new.html'
-	end
-
-	get '/users/:id/edit' do  #load edit form
-    	@user = User.find_by_id(params[:id])
-    	erb :'user/edit.html'
-  	end
- 
-	patch '/users/:id' do #edit action
-  		@article = Article.find_by_id(params[:id])
-  		@article.title = params[:title]
-  		@article.content = params[:content]
-  		@article.save
-  		redirect to "/users/#{@user.id}"
+		erb :'users/new.html'
 	end
 
 	get '/users' do 
-		erb :'user/show.html'
+		@user = User.find(params[:id])
+		if !@user.nil? && @user == current_user
+		erb :'users/index.html'
+	end
 	end
 
 	post '/users' do
 		@user = User.create(:name => params[:name], :age => params[:age], :rank => params[:rank], :email => params[:email], :password => params[:password])
 		session[:user_id] = @user.id
 		@user.save
-		erb :'user/show.html'
+		erb :'users/show.html'
 	end
 
 end

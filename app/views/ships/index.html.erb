@@ -1,0 +1,8 @@
+<%= Spaceship.each do |spacecraft| %>
+  <ul>
+  	<li><%= spacecraft.name %><br /></li>
+  </ul>
+
+
+  <a href="/spaceships/<%=spaceship.id%>/edit">Edit</a>
+<%= end %>

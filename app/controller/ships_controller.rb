@@ -18,7 +18,7 @@ class ShipsController < ApplicationController
 	get '/spaceships/:id/edit' do
 		user_logged_in?
 			@spaceship = Spaceship.find(params[:id])
-    	erb :'ships/edit.html'
+    erb :'ships/edit.html'
 	end
 
 	# index
@@ -31,15 +31,15 @@ class ShipsController < ApplicationController
   # create
   post "/spaceships" do
     user_logged_in?
-    @spaceship = Spaceship.create(params)
+      @spaceship = Spaceship.create(params)
     redirect to "/spaceships/#{@spaceship.id}"
   end
 
   # update
   patch "/spaceships/:id" do
     user_logged_in?
-    @spaceship = Spaceship.find(params[:id])
-    @spaceship.update(params[:spaceship])
+      @spaceship = Spaceship.find(params[:id])
+      @spaceship.update(params[:spaceship])
     redirect to "/spaceships/#{@spaceship.id}"
   end
 
