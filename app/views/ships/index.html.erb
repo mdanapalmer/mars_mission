@@ -1,8 +1,13 @@
-<%= Spaceship.each do |spacecraft| %>
-  <ul>
-  	<li><%= spacecraft.name %><br /></li>
-  </ul>
-
-
-  <a href="/spaceships/<%=spaceship.id%>/edit">Edit</a>
-<%= end %>
+<ul><% @spaceships.each do |spacecraft| %>
+<li>Name: <%= spacecraft.name %></li>
+<li>Type: <%= spacecraft.ship_type %></li>
+<li>Speed: <%= spacecraft.speed %></li>
+<li>Crew: <%= spacecraft.crew %></li>
+<li>Cargo: <%= spacecraft.cargo %></li>
+</ul>
+<br>
+<a href="/ships/<%=spacecraft.id%>/edit">Edit</a>
+<br>
+  <a href='/'>Return to Main Console</a>
+  
+  <% end %>

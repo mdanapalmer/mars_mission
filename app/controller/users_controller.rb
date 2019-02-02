@@ -5,8 +5,10 @@ class UsersController < ApplicationController
 	end
 
 	get '/users' do 
-		@user = User.find(params[:id])
+		@user = current_user
 		if !@user.nil? && @user == current_user
+			@spaceships = Spaceship.all
+			@astronauts = Astronaut.all
 		erb :'users/index.html'
 	end
 	end

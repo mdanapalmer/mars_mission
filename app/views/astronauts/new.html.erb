@@ -4,18 +4,19 @@
 
 <form action="/astronauts" method="post">
   <ul>
-    <li><label for="name">Astronaut Name:</label>
+    <li><label>Astronaut Name:</label>
       <input id="name" type="text" name="name" /></li>
-    <li><label for="weight">Weight:</label>
+    <li><label>Weight:</label>
       <input id="weight" type="text" name="weight"></li>
-    <li><label for="height">Height:</label>
+    <li><label>Height:</label>
       <input id="height" type="text" name="height"></li>
-    <li><label for="bio">Bio:</label>
+    <li><label>Bio:</label>
       <input id="bio" type="text" name="bio"></li>
-    <li><label for="nationality">Nationality:</label>
+    <li><label>Nationality:</label>
       <input id="nationality" type="text" name="nationality"></li>
-    <li><label for="specialty">Specialty:</label>
+    <li><label>Specialty:</label>
       <input id="specialty" type="text" name="specialty"></li>
+      <input id="user_id" type="hidden" name="user_id" value="<%= @astronaut = current_user.id %>"/>
   </ul>
   <input type="submit" />
 </form>

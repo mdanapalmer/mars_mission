@@ -16,5 +16,10 @@
       <input id="specialty" type="text" name="astronaut[specialty]"  value="<%= @astronaut.specialty %>">
     </li>
   </ul>
-  <input type="submit" />
+  <input type="submit" value="Update Crew Member" />
+</form>
+
+<form method="post" action="/astronauts/<%= @astronaut.id %>">
+  <input type="hidden" name="_method" value="Delete" />
+  <input type="submit" value="Delete Crew Member" />
 </form>

@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
 
 	def user_logged_in?
 		if !logged_in?
-			redirect to '/login'
+			erb :'/error'
 		end
 	end
 

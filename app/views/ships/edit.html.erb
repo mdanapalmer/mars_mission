@@ -1,12 +1,12 @@
 <h2>Edit Your Space Craft</h2>
 
-<form action="/spaceships/<%= @spaceship.id %>" method="post">
+<form action="/ships/<%= @spaceship.id %>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <ul>
     <li><label>Space Craft Name:</label>
       <input id="name" type="text" name="spaceship[name]" value="<%= @spaceship.name %>" /></li>
       <li><label>Type:</label>
-      <input id="type" type="text" name="spaceship[type]"  value="<%= @spaceship.type %>"></li>
+      <input id="ship_type" type="text" name="spaceship[ship_type]"  value="<%= @spaceship.ship_type %>"></li>
       <li><label>Speed:</label>
       <input id="speed" type="text" name="spaceship[speed]"  value="<%= @spaceship.speed %>"></li>
       <li><label>Crew:</label>
@@ -15,4 +15,12 @@
       <input id="cargo" type="text" name="spaceship[cargo]"  value="<%= @spaceship.cargo %>"></li>
   </ul>
   <input type="submit" />
+  </form>
+
+  <form method="post" action="/ships/<%= @spaceship.id %>">
+  <input type="hidden" name="_method" value="Delete" />
+  <input type="submit" value="Delete" />
+
+  <br />
+  <br />
 </form>

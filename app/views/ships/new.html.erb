@@ -7,13 +7,14 @@
     <li><label>Name:</label>
       <input id="name" type="text" name="name"></li>
     <li><label>Type</label>
-      <input id="type" type="text" name="type"></li>
+      <input id="ship_type" type="text" name="ship_type"></li>
     <li><label>Speed</label>
       <input id="speed" type="text" name="speed"></li>
     <li><label>Crew</label>
       <input id="crew" type="text" name="crew"></li>
     <li><label>Cargo:</label>
       <input id="cargo" type="text" name="cargo"></li>
+      <input id="user_id" type="hidden" name="user_id" value="<%= current_user.id %>"/>
   </ul>
   <input type="submit">
 </form>

@@ -7,5 +7,13 @@
 <p>Specialty: <%= @astronaut.specialty %></p>
 <p>Nationality: <%= @astronaut.nationality %></p>
 
-<a href="/">Return to Main Console</a>
-<a href="/astronaut/new">Create a New Crew Member</a>
+<a href="/">Return to Main Console</a><br>
+<a href="/astronauts/new">Create a New Crew Member</a>
+
+<form method="post" action="/astronauts/<%= @astronaut.id %>">
+  <input type="hidden" name="_method" value="Delete" />
+  <input type="submit" value="Delete Crew Member" />
+
+  <br />
+  <br />
+</form>

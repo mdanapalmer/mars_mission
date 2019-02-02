@@ -1,9 +1,14 @@
-<p>Update for <%= @spaceship.name %></p>
+<p>Space Craft: <%= @spaceship.name %></p>
 
 <p>Name: <%= @spaceship.name %></p>
-<p>Weight: <%= @spaceship.type %></p>
-<p>Height: <%= @spaceship.speed %></p>
-<p>Bio: <%= @spaceship.crew %></p>
-<p>Specialty: <%= @spaceship.cargo %></p>
+<p>Type: <%= @spaceship.ship_type %></p>
+<p>Speed: <%= @spaceship.speed %></p>
+<p>Crew: <%= @spaceship.crew %></p>
+<p>Cargo: <%= @spaceship.cargo %></p>
 
 <a href="/">Return to Main Console</a>
+
+<form method="post" action="/ships/<%= @spaceship.id %>">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete" />
+</form>
