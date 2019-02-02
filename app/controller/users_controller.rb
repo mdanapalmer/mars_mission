@@ -5,8 +5,9 @@ class UsersController < ApplicationController
 	end
 
 	get '/users' do 
-		@user = current_user
-		if !@user.nil? && @user == current_user
+		if !logged_in?
+			redirect to '/login'
+		else
 			@spaceships = Spaceship.all
 			@astronauts = Astronaut.all
 		erb :'users/index.html'
@@ -16,7 +17,6 @@ class UsersController < ApplicationController
 	post '/users' do
 		@user = User.create(:name => params[:name], :age => params[:age], :rank => params[:rank], :email => params[:email], :password => params[:password])
 		session[:user_id] = @user.id
-		@user.save
 		erb :'users/show.html'
 	end
 

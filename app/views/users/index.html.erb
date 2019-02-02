@@ -8,6 +8,7 @@
 <li>Rank: <%= @user.rank %></li>
 <li>Age: <%= @user.age %></li>
 </ul>
+<% end %>
 
 <h3>Flight Controller of the following ships:</h3>
 
@@ -18,8 +19,7 @@
 <li>Crew: <%= spacecraft.crew %></li>
 <li>Cargo: <%= spacecraft.cargo %></li>
 </ul>
-
-
+<% end %>
 <h3>Current Astronaut Roster:</h3>
 
 <ul><% @astronauts.each do |astro| %>
@@ -32,8 +32,10 @@
 </ul>
 <br>
 
-<% else %>
-
+<% end %>
+<% if !logged_in? %>
 <p>You need to be logged in to view this information.</p>
 
+<% end %>
   <a href='/'>Return to Mission Control.</a>
+  
