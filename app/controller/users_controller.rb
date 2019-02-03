@@ -5,11 +5,9 @@ class UsersController < ApplicationController
 	end
 
 	get '/users' do 
-		if !logged_in?
-			redirect to '/login'
-		else
-			@spaceships = Spaceship.all
-			@astronauts = Astronaut.all
+		if logged_in?
+			@spaceships = current_user.spaceships
+			@astronauts = current_user.astronauts
 		erb :'users/index.html'
 	end
 	end

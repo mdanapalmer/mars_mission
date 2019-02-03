@@ -3,12 +3,13 @@
 <h2>User Information:</h2>
 
 <ul>
-<li>Name: <%= @user.name %></li>
-<li>Email: <%= @user.email %></li>
-<li>Rank: <%= @user.rank %></li>
-<li>Age: <%= @user.age %></li>
+<li>Name: <%= current_user.name %></li>
+<li>Email: <%= current_user.email %></li>
+<li>Rank: <%= current_user.rank %></li>
+<li>Age: <%= current_user.age %></li>
 </ul>
 <% end %>
+
 
 <h3>Flight Controller of the following ships:</h3>
 
@@ -20,6 +21,7 @@
 <li>Cargo: <%= spacecraft.cargo %></li>
 </ul>
 <% end %>
+
 <h3>Current Astronaut Roster:</h3>
 
 <ul><% @astronauts.each do |astro| %>
@@ -31,8 +33,8 @@
 <li><%= astro.nationality %></li>
 </ul>
 <br>
-
 <% end %>
+
 <% if !logged_in? %>
 <p>You need to be logged in to view this information.</p>
 

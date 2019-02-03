@@ -8,5 +8,5 @@ use Rack::MethodOverride
 use SessionsController
 use AstronautsController
 use UsersController
-use ShipsController
+use SpaceshipsController
 run ApplicationController

@@ -1,4 +1,4 @@
-class ShipsController < ApplicationController
+class SpaceshipsController < ApplicationController
 
 # new
 	get '/ships/new' do
@@ -30,13 +30,14 @@ end
 end
 	# index
   get "/ships" do
-    if user_logged_in?
-      erb :'error'
-    else 
-    	@spaceships = Spaceship.all
+    if logged_in?
+      @spaceships = current_user.spaceships     
     erb :'ships/index.html'
+  else
+    erb :'error'
   end
 end
+
   # create
   post "/ships" do
     if user_logged_in?

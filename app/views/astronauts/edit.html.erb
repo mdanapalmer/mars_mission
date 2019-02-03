@@ -1,19 +1,19 @@
-<form action="/astronauts/<%= @astronaut.id %>" method="post">
+<form action="/astronauts/:id" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <ul>
     <li>
       <label>Astronaut Name:</label>
-      <input id="name" type="text" name="astronaut[name]" value="<%= @astronaut.name %>" />
+      <input type="text" name="astronaut[name]" id="astronaut_name" value="<%=@astro.name%>">
       <li><label>Weight:</label>
-      <input id="weight" type="text" name="astronaut[weight]"  value="<%= @astronaut.weight %>">
+      <input type="text" name="astronaut[weight]" id="astronaut_weight" value="<%=@astronauts.weight%>">
       <li><label>Height:</label>
-      <input id="height" type="text" name="astronaut[height]"  value="<%= @astronaut.height %>">
+      <input type="text" name="astronaut[height]" id="astronaut_height" value="<%=astronaut.height%>">
       <li><label>Bio:</label>
-      <input id="bio" type="text" name="astronaut[bio]"  value="<%= @astronaut.bio %>">
+      <input type="text" name="astronaut[bio]" id="astronaut_bio" value="<%=astronaut.bio%>">
       <li><label>Nationality:</label>
-      <input id="nationality" type="text" name="astronaut[nationality]"  value="<%= @astronaut.nationality %>">
+      <input type="text" name="astronaut[nationality]" id="astronaut_nationality" value="<%=astronaut.nationality%>">
       <li><label>Specialty:</label>
-      <input id="specialty" type="text" name="astronaut[specialty]"  value="<%= @astronaut.specialty %>">
+      <input type="text" name="astronaut[specialty]" id="astronaut_specialty" value="<%=astronaut.specialty%>">
     </li>
   </ul>
   <input type="submit" value="Update Crew Member" />
