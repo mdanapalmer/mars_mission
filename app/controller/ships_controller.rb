@@ -2,70 +2,73 @@ class SpaceshipsController < ApplicationController
 
 # new
 	get '/ships/new' do
-    if user_logged_in?
-      erb :'error'
-    else 
+    if logged_in?
       @spaceship = Spaceship.new
     erb :'ships/new.html'
-	end
+    else
+    erb :'error'
+  end
 end
 
 	# show
-  get "/ships/:id" do
-    if user_logged_in?
-      erb :'error'
-    else  
+  get "/ships/:id" do  
+    if logged_in?
     	@spaceship = Spaceship.find(params[:id])
     erb :'ships/show.html'
+    else
+    erb :'error'
   end
 end
+
   	# edit
 	get '/ships/:id/edit' do
-		if user_logged_in?
-      erb :'error'
-    else 
+    if logged_in?
 			@spaceship = Spaceship.find(params[:id])
     erb :'ships/edit.html'
-	end
+    else
+    erb :'error'
+  end
 end
+
 	# index
-  get "/ships" do
+  get '/ships' do
     if logged_in?
       @spaceships = current_user.spaceships     
     erb :'ships/index.html'
-  else
+    else
     erb :'error'
   end
 end
 
   # create
-  post "/ships" do
-    if user_logged_in?
-      erb :'error'
-    else 
+  post '/ships' do
+    if logged_in?
       @spaceship = Spaceship.create(params)
-    redirect to "/ships/#{@spaceship.id}"
-  end
+    redirect to '/ships/#{@spaceship.id}'
+    else
+    erb :'error'
+  end  
 end
+
   # update
-  patch "/ships/:id" do
-    if user_logged_in?
-      erb :'error'
-    else 
+  patch '/ships/:id' do
+    if logged_in?
       @spaceship = Spaceship.find(params[:id])
       @spaceship.update(params[:spaceship])
     redirect to "/ships/#{@spaceship.id}"
-  end
-end
-  #destroy
-  delete "/ships/:id" do
-    if user_logged_in?
-      erb :'error'
-    else 
-    Spaceship.destroy(params[:id])
-    redirect to "/ships"
+    else
+    erb :'error'
   end
 end
 
+  #destroy
+  delete "/ships/:id" do
+    if logged_in?
+    Spaceship.destroy(params[:id])
+    redirect to "/ships"
+  else
+    erb :'error'
+  end
+end
 
 end

@@ -1,25 +1,25 @@
-<form action="/astronauts/:id" method="post">
+<h2>Update Crew Member</h2>
+
+<form action="/astronauts/<%= @astronaut.id %>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <ul>
-    <li>
-      <label>Astronaut Name:</label>
-      <input type="text" name="astronaut[name]" id="astronaut_name" value="<%=@astro.name%>">
+      <li><label>Crew Member Name:</label>
+      <input id="name" type="text" name="astronaut[name]" value="<%= @astronaut.name %>" /></li>
       <li><label>Weight:</label>
-      <input type="text" name="astronaut[weight]" id="astronaut_weight" value="<%=@astronauts.weight%>">
+      <input id="weight" type="text" name="astronaut[weight]"  value="<%= @astronaut.weight %>"></li>
       <li><label>Height:</label>
-      <input type="text" name="astronaut[height]" id="astronaut_height" value="<%=astronaut.height%>">
+      <input id="height" type="text" name="astronaut[height]" value="<%= @astronaut.height %>"></li>
       <li><label>Bio:</label>
-      <input type="text" name="astronaut[bio]" id="astronaut_bio" value="<%=astronaut.bio%>">
+      <input id="bio" type="text" name="astronaut[bio]" value="<%= @astronaut.bio %>"></li>
       <li><label>Nationality:</label>
-      <input type="text" name="astronaut[nationality]" id="astronaut_nationality" value="<%=astronaut.nationality%>">
+      <input id="nationality" type="text" name="astronaut[nationality]" value="<%= @astronaut.nationality %>"></li>
       <li><label>Specialty:</label>
-      <input type="text" name="astronaut[specialty]" id="astronaut_specialty" value="<%=astronaut.specialty%>">
-    </li>
+      <input id="crew" type="text" name="astronaut[specialty]" value="<%= @astronaut.specialty %>"></li>
   </ul>
-  <input type="submit" value="Update Crew Member" />
-</form>
+  <input type="Submit" value="Update Crew Member" />
+  </form>
 
-<form method="post" action="/astronauts/<%= @astronaut.id %>">
+  <form method="post" action="/astronauts/<%= @astronaut.id %>">
   <input type="hidden" name="_method" value="Delete" />
   <input type="submit" value="Delete Crew Member" />
 </form>

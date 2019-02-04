@@ -19,6 +19,12 @@
 <li>Speed: <%= spacecraft.speed %></li>
 <li>Crew: <%= spacecraft.crew %></li>
 <li>Cargo: <%= spacecraft.cargo %></li>
+<br>
+<a href="/ships/<%=spacecraft.id%>/edit">Edit Space Craft</a>
+<br>
+<form method="post" action="/ships/<%= spacecraft.id %>">
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete Space Craft" />
 </ul>
 <% end %>
 
@@ -29,8 +35,15 @@
 <li><%= astro.weight %></li>
 <li><%= astro.height %></li>
 <li><%= astro.bio %></li>
-<li><%= astro.specialty %></li>
 <li><%= astro.nationality %></li>
+<li><%= astro.specialty %></li>
+<br>
+<a href="/astronauts/<%= astro.id %>/edit">Edit Crew Member</a>
+<br>
+<form method="post" action="/astronauts/<%= astro.id %>">
+  <input type="hidden" name="_method" value="Delete" />
+  <input type="submit" value="Delete Crew Member" />
+<br>
 </ul>
 <br>
 <% end %>

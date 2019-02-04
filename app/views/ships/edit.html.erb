@@ -8,19 +8,16 @@
       <li><label>Type:</label>
       <input id="ship_type" type="text" name="spaceship[ship_type]"  value="<%= @spaceship.ship_type %>"></li>
       <li><label>Speed:</label>
-      <input id="speed" type="text" name="spaceship[speed]"  value="<%= @spaceship.speed %>"></li>
+      <input id="speed" type="text" name="spaceship[speed]" value="<%= @spaceship.speed %>"></li>
       <li><label>Crew:</label>
-      <input id="crew" type="text" name="spaceship[crew]"  value="<%= @spaceship.crew %>"></li>
+      <input id="crew" type="text" name="spaceship[crew]" value="<%= @spaceship.crew %>"></li>
       <li><label>Cargo:</label>
-      <input id="cargo" type="text" name="spaceship[cargo]"  value="<%= @spaceship.cargo %>"></li>
+      <input id="cargo" type="text" name="spaceship[cargo]" value="<%= @spaceship.cargo %>"></li>
   </ul>
   <input type="submit" />
   </form>
 
   <form method="post" action="/ships/<%= @spaceship.id %>">
   <input type="hidden" name="_method" value="Delete" />
-  <input type="submit" value="Delete" />
-
-  <br />
-  <br />
+  <input type="submit" value="Delete Space Craft" />
 </form>
